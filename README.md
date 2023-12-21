@@ -18,27 +18,46 @@ this shows the third excel sheet labeled "2020"
 sources used:
 
   used for applying code to all worksheets
+
+    For Each ws In Worksheets
     
     https://support.microsoft.com/en-au/topic/macro-to-loop-through-all-worksheets-in-a-workbook-feef14e3-97cf-00e2-538b-5da40186e2b0
     
     https://stackoverflow.com/questions/21918166/excel-vba-for-each-worksheet-loop
 
   used to count all the rows after the column selected
+
+    lastrow = ws.Cells(Rows.Count, 1).End(xlUp).Row
+    lastrowSummary = ws.Cells(Rows.Count, 9).End(xlUp).Row
     
     https://www.excelcampus.com/vba/find-last-row-column-cell/
 
   format the numbers to percent or scientific notation
+
+    ws.Range("K" & SummaryTableRow).NumberFormat = "0.00%"
+    ws.Cells(2, 17).NumberFormat = "0.00%"
+    ws.Cells(3, 17).NumberFormat = "0.00%"
+    ws.Cells(4, 17).NumberFormat = "0.00E+0"
    
     https://www.automateexcel.com/vba/format-numbers/
 
   finding the max or min
+
+    ws.Cells(i, 11).Value = Application.WorksheetFunction.Max(ws.Range("K2:K" & lastrowSummary))
+    ws.Cells(i, 11).Value = Application.WorksheetFunction.Min(ws.Range("K2:K" & lastrowSummary))
+    ws.Cells(i, 12).Value = Application.WorksheetFunction.Max(ws.Range("L2:L" & lastrowSummary))
    
     https://www.excelanytime.com/excel/index.php?option=com_content&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid=79&Itemid=475
 
   class activities
     
     credit card charges (for loop)
+    For i = 2 To lastrow
     
     formatter (color changes)
+    ws.Cells(i, 10).Interior.ColorIndex = 4
+    ws.Cells(i, 10).Interior.ColorIndex = 3
     
     grader solution (conditionals with color changes)
+    If ws.Cells(i, 10).Value > 0 Then
+      ws.Cells(i, 10).Interior.ColorIndex = 4
