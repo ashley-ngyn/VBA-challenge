@@ -14,3 +14,23 @@ this shows the second excel sheet labeled "2019"
 this shows the third excel sheet labeled "2020"
 <img width="1470" alt="6" src="https://github.com/ashley-ngyn/module_2/assets/150317761/1e14e139-93c2-4c0d-ad33-9a88a9a9701f">
 
+
+sources used:
+
+  used for applying code to all worksheets
+    https://support.microsoft.com/en-au/topic/macro-to-loop-through-all-worksheets-in-a-workbook-feef14e3-97cf-00e2-538b-5da40186e2b0
+    https://stackoverflow.com/questions/21918166/excel-vba-for-each-worksheet-loop
+
+  used to count all the rows after the column selected
+    https://www.excelcampus.com/vba/find-last-row-column-cell/
+
+  format the numbers to percent or scientific notation
+    https://www.automateexcel.com/vba/format-numbers/
+
+  finding the max or min
+    https://www.excelanytime.com/excel/index.php?option=com_content&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid=79&Itemid=475
+
+  class activities
+    credit card charges (for loop)
+    formatter (color changes)
+    grader solution (conditionals with color changes)
